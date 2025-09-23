@@ -1,59 +1,74 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Crimson+Text:wght@400;600&display=swap");
-/*! tailwindcss v4.1.3 | MIT License | https://tailwindcss.com */
-@layer properties {
-  @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
-    *, :before, :after, ::backdrop {
-      --tw-translate-x: 0;
-      --tw-translate-y: 0;
-      --tw-translate-z: 0;
-      --tw-rotate-x: rotateX(0);
-      --tw-rotate-y: rotateY(0);
-      --tw-rotate-z: rotateZ(0);
-      --tw-skew-x: skewX(0);
-      --tw-skew-y: skewY(0);
-      --tw-scroll-snap-strictness: proximity;
-      --tw-space-y-reverse: 0;
-      --tw-space-x-reverse: 0;
-      --tw-border-style: solid;
-      --tw-gradient-position: initial;
-      --tw-gradient-from: #0000;
-      --tw-gradient-via: #0000;
-      --tw-gradient-to: #0000;
-      --tw-gradient-stops: initial;
-      --tw-gradient-via-stops: initial;
-      --tw-gradient-from-position: 0%;
-      --tw-gradient-via-position: 50%;
-      --tw-gradient-to-position: 100%;
-      --tw-leading: initial;
-      --tw-font-weight: initial;
-      --tw-tracking: initial;
-      --tw-shadow: 0 0 #0000;
-      --tw-shadow-color: initial;
-      --tw-shadow-alpha: 100%;
-      --tw-inset-shadow: 0 0 #0000;
-      --tw-inset-shadow-color: initial;
-      --tw-inset-shadow-alpha: 100%;
-      --tw-ring-color: initial;
-      --tw-ring-shadow: 0 0 #0000;
-      --tw-inset-ring-color: initial;
-      --tw-inset-ring-shadow: 0 0 #0000;
-      --tw-ring-inset: initial;
-      --tw-ring-offset-width: 0px;
-      --tw-ring-offset-color: #fff;
-      --tw-ring-offset-shadow: 0 0 #0000;
-      --tw-outline-style: solid;
-      --tw-backdrop-blur: initial;
-      --tw-backdrop-brightness: initial;
-      --tw-backdrop-contrast: initial;
-      --tw-backdrop-grayscale: initial;
-      --tw-backdrop-hue-rotate: initial;
-      --tw-backdrop-invert: initial;
-      --tw-backdrop-opacity: initial;
-      --tw-backdrop-saturate: initial;
-      --tw-backdrop-sepia: initial;
-      --tw-duration: initial;
-    }
-  }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+    --tw-rotate-y: rotateY(0);
+    --tw-rotate-z: rotateZ(0);
+    --tw-skew-x: skewX(0);
+    --tw-skew-y: skewY(0);
+    --tw-scroll-snap-strictness: proximity;
+    --tw-space-y-reverse: 0;
+    --tw-space-x-reverse: 0;
+    --tw-border-style: solid;
+    --tw-gradient-position: initial;
+    --tw-gradient-from: #0000;
+    --tw-gradient-via: #0000;
+    --tw-gradient-to: #0000;
+    --tw-gradient-stops: initial;
+    --tw-gradient-via-stops: initial;
+    --tw-gradient-from-position: 0%;
+    --tw-gradient-via-position: 50%;
+    --tw-gradient-to-position: 100%;
+    --tw-leading: initial;
+    --tw-font-weight: initial;
+    --tw-tracking: initial;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-color: initial;
+    --tw-shadow-alpha: 100%;
+    --tw-inset-shadow: 0 0 #0000;
+    --tw-inset-shadow-color: initial;
+    --tw-inset-shadow-alpha: 100%;
+    --tw-ring-color: initial;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-inset-ring-color: initial;
+    --tw-inset-ring-shadow: 0 0 #0000;
+    --tw-ring-inset: initial;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-outline-style: solid;
+    --tw-backdrop-blur: initial;
+    --tw-backdrop-brightness: initial;
+    --tw-backdrop-contrast: initial;
+    --tw-backdrop-grayscale: initial;
+    --tw-backdrop-hue-rotate: initial;
+    --tw-backdrop-invert: initial;
+    --tw-backdrop-opacity: initial;
+    --tw-backdrop-saturate: initial;
+    --tw-backdrop-sepia: initial;
+    --tw-duration: initial;
 }
 
 @layer theme {
@@ -153,6 +168,8 @@
     --default-mono-font-variation-settings: var(--font-mono--font-variation-settings);
   }
 }
+
+/* Rest of your CSS continues here... */
 
 @layer base {
   *, :after, :before, ::backdrop {
@@ -259,7 +276,6 @@
   }
 
   img, svg, video, canvas, audio, iframe, embed, object {
-    vertical-align: middle;
     display: block;
   }
 
@@ -2290,7 +2306,7 @@
     background-color: var(--card);
   }
 
-  .data-\[state\=closed\]\:animate-out[data-state="closed"] {
+  .data-\[state\=closed\]:animate-out[data-state="closed"] {
     animation: exit var(--tw-duration, .15s) var(--tw-ease, ease);
   }
 
@@ -2659,7 +2675,7 @@
     border-bottom-right-radius: calc(var(--radius)  - 2px);
   }
 
-  .\[\&\:has\(\[aria-selected\]\.day-range-end\)\]\:rounded-r-md:has([aria-selected].day-range-end) {
+  .\[\&\:has\(\[aria-selected\].day-range-end\)\]\:rounded-r-md:has([aria-selected].day-range-end) {
     border-top-right-radius: calc(var(--radius)  - 2px);
     border-bottom-right-radius: calc(var(--radius)  - 2px);
   }
@@ -2891,7 +2907,8 @@ html {
 
 @property --tw-gradient-position {
   syntax: "*";
-  inherits: false
+  inherits: false;
+  initial-value: initial;
 }
 
 @property --tw-gradient-from {
@@ -2914,12 +2931,12 @@ html {
 
 @property --tw-gradient-stops {
   syntax: "*";
-  inherits: false
+  inherits: false;
 }
 
 @property --tw-gradient-via-stops {
   syntax: "*";
-  inherits: false
+  inherits: false;
 }
 
 @property --tw-gradient-from-position {
@@ -2942,17 +2959,17 @@ html {
 
 @property --tw-leading {
   syntax: "*";
-  inherits: false
+  inherits: false;
 }
 
 @property --tw-font-weight {
   syntax: "*";
-  inherits: false
+  inherits: false;
 }
 
 @property --tw-tracking {
   syntax: "*";
-  inherits: false
+  inherits: false;
 }
 
 @property --tw-shadow {
@@ -2963,7 +2980,7 @@ html {
 
 @property --tw-shadow-color {
   syntax: "*";
-  inherits: false
+  inherits: false;
 }
 
 @property --tw-shadow-alpha {
@@ -2980,7 +2997,7 @@ html {
 
 @property --tw-inset-shadow-color {
   syntax: "*";
-  inherits: false
+  inherits: false;
 }
 
 @property --tw-inset-shadow-alpha {
@@ -2991,7 +3008,7 @@ html {
 
 @property --tw-ring-color {
   syntax: "*";
-  inherits: false
+  inherits: false;
 }
 
 @property --tw-ring-shadow {
@@ -3002,7 +3019,7 @@ html {
 
 @property --tw-inset-ring-color {
   syntax: "*";
-  inherits: false
+  inherits: false;
 }
 
 @property --tw-inset-ring-shadow {
@@ -3013,7 +3030,7 @@ html {
 
 @property --tw-ring-inset {
   syntax: "*";
-  inherits: false
+  inherits: false;
 }
 
 @property --tw-ring-offset-width {
@@ -3042,52 +3059,52 @@ html {
 
 @property --tw-backdrop-blur {
   syntax: "*";
-  inherits: false
+  inherits: false;
 }
 
 @property --tw-backdrop-brightness {
   syntax: "*";
-  inherits: false
+  inherits: false;
 }
 
 @property --tw-backdrop-contrast {
   syntax: "*";
-  inherits: false
+  inherits: false;
 }
 
 @property --tw-backdrop-grayscale {
   syntax: "*";
-  inherits: false
+  inherits: false;
 }
 
 @property --tw-backdrop-hue-rotate {
   syntax: "*";
-  inherits: false
+  inherits: false;
 }
 
 @property --tw-backdrop-invert {
   syntax: "*";
-  inherits: false
+  inherits: false;
 }
 
 @property --tw-backdrop-opacity {
   syntax: "*";
-  inherits: false
+  inherits: false;
 }
 
 @property --tw-backdrop-saturate {
   syntax: "*";
-  inherits: false
+  inherits: false;
 }
 
 @property --tw-backdrop-sepia {
   syntax: "*";
-  inherits: false
+  inherits: false;
 }
 
 @property --tw-duration {
   syntax: "*";
-  inherits: false
+  inherits: false;
 }
 
 @keyframes pulse {
@@ -3108,4 +3125,5 @@ html {
     opacity: var(--tw-exit-opacity, 1);
     transform: translate3d(var(--tw-exit-translate-x, 0), var(--tw-exit-translate-y, 0), 0) scale3d(var(--tw-exit-scale, 1), var(--tw-exit-scale, 1), var(--tw-exit-scale, 1)) rotate(var(--tw-exit-rotate, 0));
   }
+}
 }

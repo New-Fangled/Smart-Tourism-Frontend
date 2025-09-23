@@ -4,17 +4,19 @@ import { Menu, X, Home, Calendar, LogIn, MapPin, Search } from 'lucide-react';
 import { Button } from './ui/button';
 import { useTheme } from './ThemeProvider';
 import { Logo } from './Logo';
+import { Link, useNavigate } from 'react-router-dom';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { theme } = useTheme();
+  const navigate = useNavigate();
 
   const navItems = [
-    { icon: Home, label: 'Home', href: '#home' },
-    { icon: MapPin, label: 'Destinations', href: '#destinations' },
-    { icon: Calendar, label: 'Bookings', href: '#bookings' },
-    { icon: Search, label: 'Search', href: '#search' },
-    { icon: LogIn, label: 'Login', href: '#login' },
+    { icon: Home, label: 'Home', href: '/' },
+    { icon: MapPin, label: 'Destinations', href: '/destinations' },
+    { icon: Calendar, label: 'Bookings', href: '/bookings' },
+    { icon: Search, label: 'Search', href: '/search' },
+    { icon: LogIn, label: 'Login', href: '/login' },
   ];
 
   return (
@@ -27,25 +29,31 @@ export function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Logo size="md" animated />
+            <Link to="/">
+              <Logo size="md" animated />
+            </Link>
           </motion.div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item, index) => (
-              <motion.a
+              <motion.div
                 key={item.label}
-                href={item.href}
-                className="flex items-center space-x-1 text-foreground hover:text-orange-600 transition-colors duration-200"
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <item.icon className="w-4 h-4" />
-                <span style={{ fontFamily: 'Georgia, serif' }}>{item.label}</span>
-              </motion.a>
+                <Link
+                  to={item.href}
+                  className="flex items-center space-x-1 text-foreground hover:text-orange-600 transition-colors duration-200"
+                >
+                  <item.icon className="w-4 h-4" />
+                  <span style={{ fontFamily: 'Georgia, serif' }}>{item.label}</span>
+                </Link>
+              </motion.div>
             ))}
             
+            {/* Plan Trip Button */}
             <motion.button
               className={`px-6 py-2 rounded-full ${
                 theme === 'dark' 
@@ -63,7 +71,7 @@ export function Navbar() {
             </motion.button>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile Navigation */}
           <div className="md:hidden">
             <Button
               variant="ghost"
@@ -75,7 +83,7 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation Menu */}
         {isOpen && (
           <motion.div
             className="md:hidden bg-background/95 backdrop-blur-sm border-t border-border"
@@ -86,17 +94,18 @@ export function Navbar() {
           >
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.label}
-                  href={item.href}
+                  to={item.href}
                   className="flex items-center space-x-2 px-3 py-2 text-foreground hover:text-orange-600 hover:bg-accent rounded-md transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   <item.icon className="w-4 h-4" />
                   <span style={{ fontFamily: 'Georgia, serif' }}>{item.label}</span>
-                </a>
+                </Link>
               ))}
               
+              {/* Mobile Plan Trip Button */}
               <motion.button
                 className={`w-full mt-4 px-6 py-2 rounded-full ${
                   theme === 'dark' 
