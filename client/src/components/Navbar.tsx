@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Home, Calendar, LogIn, MapPin, Search } from 'lucide-react';
@@ -14,7 +15,6 @@ export function Navbar() {
     { icon: MapPin, label: 'Destinations', href: '#destinations' },
     { icon: Calendar, label: 'Bookings', href: '#bookings' },
     { icon: Search, label: 'Search', href: '#search' },
-    { icon: LogIn, label: 'Login', href: '#login' },
   ];
 
   return (
@@ -45,6 +45,9 @@ export function Navbar() {
                 <span style={{ fontFamily: 'Georgia, serif' }}>{item.label}</span>
               </motion.a>
             ))}
+            <Link to="/login" className="text-foreground hover:text-orange-600 transition-colors duration-200" style={{ marginRight: "1rem" }}>Login</Link>
+            <Link to="/register" className="text-foreground hover:text-orange-600 transition-colors duration-200" style={{ marginRight: "1rem" }}>Register</Link>
+            <Link to="/booking" className="text-foreground hover:text-orange-600 transition-colors duration-200">Book Now</Link>
             
             <motion.button
               className={`px-6 py-2 rounded-full ${
@@ -70,6 +73,10 @@ export function Navbar() {
               size="icon"
               onClick={() => setIsOpen(!isOpen)}
             >
+              <nav>
+                <Link to="/login" style={{ marginRight: "1rem" }}>Login</Link>
+                <Link to="/register">Register</Link>
+              </nav>
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </Button>
           </div>
@@ -96,6 +103,8 @@ export function Navbar() {
                   <span style={{ fontFamily: 'Georgia, serif' }}>{item.label}</span>
                 </a>
               ))}
+              <Link to="/login" className="block px-3 py-2 text-foreground hover:text-orange-600 hover:bg-accent rounded-md transition-colors" onClick={() => setIsOpen(false)}>Login</Link>
+              <Link to="/register" className="block px-3 py-2 text-foreground hover:text-orange-600 hover:bg-accent rounded-md transition-colors" onClick={() => setIsOpen(false)}>Register</Link>
               
               <motion.button
                 className={`w-full mt-4 px-6 py-2 rounded-full ${
